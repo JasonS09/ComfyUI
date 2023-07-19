@@ -1,1 +1,1 @@
-from .krita_image_loader import NODE_CLASS_MAPPINGS
+from .class_mappings import NODE_CLASS_MAPPINGS

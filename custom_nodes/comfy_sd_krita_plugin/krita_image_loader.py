@@ -19,7 +19,7 @@ class LoadBase64Image:
         }
     
     RETURN_TYPES = ("IMAGE", "MASK")
-    CATEGORY = "image"
+    CATEGORY = "comfyui_krita_plugin"
     
     FUNCTION = "load_image"
     def load_image(self, image):
@@ -46,7 +46,7 @@ class LoadBase64ImageMask:
             "channel": (s._color_channels, ), }
         }
 
-    CATEGORY = "mask"
+    CATEGORY = "comfyui_krita_plugin"
 
     RETURN_TYPES = ("MASK",)
     FUNCTION = "load_image"
@@ -68,7 +68,7 @@ class LoadBase64ImageMask:
         return (mask,)
 
     @classmethod
-    def VALIDATE_INPUTS(s, channel):
+    def VALIDATE_INPUTS(s, image, channel): #image parameter is necessary
         if channel not in s._color_channels:
             return "Invalid color channel: {}".format(channel)
 
